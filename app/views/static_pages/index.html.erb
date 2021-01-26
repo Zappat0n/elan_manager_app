@@ -1,3 +1,13 @@
 <h2 class = "mt-3">
   <%= current_user.name.capitalize %>
 </h2>
+
+<% if current_user.avatar.attached?%>
+<% else %>
+  <%= form_tag(user_registration_path, method: :patch) %>
+    <div class="d-none">
+      <%= text_field_tag :"user_id[id]", value: current_user.id %>
+    </div>
+    <%= file_field_tag :"user[avatar]" %>
+    <%= submit_tag "Add file" %>
+<% end %>
