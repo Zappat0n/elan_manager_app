@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, authentication_keys: [:name]
 
   validates :email, uniqueness: true
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, presence: true, length: { minimum:3 }
 end
