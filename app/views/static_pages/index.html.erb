@@ -3,11 +3,12 @@
 </h2>
 
 <% if current_user.avatar.attached?%>
+<%= image_tag current_user.avatar.variant(resize: '100x100!', class: 'rounded-circle') %>
 <% else %>
   <%= form_tag(user_registration_path, method: :patch) %>
     <div class="d-none">
-      <%= text_field_tag :"user_id[id]", value: current_user.id %>
+      <%= text_field_tag :"id", value: current_user.id %>
     </div>
-    <%= file_field_tag :"user[avatar]" %>
+    <%= file_field_tag :"avatar" %>
     <%= submit_tag "Add file" %>
 <% end %>
