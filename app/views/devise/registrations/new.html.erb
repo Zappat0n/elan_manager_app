@@ -8,19 +8,23 @@
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
-  <div class="field">
+  <div class="field d-none">
+    <%= f.label :email %>
+    <%= f.email_field :email, value: "a@a.com" %>
+  </div>
+
+  <div class="field d-none">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, value: "123456" %>
   </div>
 
-  <div class="field">
+  <div class="field d-none">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, value: "123456" %>
   </div>
-
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

@@ -16,5 +16,4 @@ RSpec.describe User, type: :model do
     user2 = User.new(name: 'X')
     expect(user2.valid?).to be false
   end
-
 end
