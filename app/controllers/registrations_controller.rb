@@ -1,8 +1,7 @@
 class RegistrationsController < ApplicationController
   include RegistrationsHelper
 
-  def new
-  end
+  def new; end
 
   def update
     if current_user.avatar.attach(params['/users'][:avatar])
