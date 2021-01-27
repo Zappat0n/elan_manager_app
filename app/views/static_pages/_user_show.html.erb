@@ -4,7 +4,8 @@
   <%= current_user.name.capitalize %>
 </h2>
 
-<% link_to %>
+<% link_to presentations_index_path, 'All my presentations' %>
+
 
 
 <%= form_for(user_registration_path, url: user_registration_path, method: :patch) do |f|%>

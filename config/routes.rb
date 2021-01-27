@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'presentations/index'
+  get 'presentations/new'
   root 'static_pages#index'
 
   devise_for :users, controllers: { registrations: 'registrations' }
