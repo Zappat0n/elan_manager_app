@@ -1,6 +1,9 @@
 class RegistrationsController < ApplicationController
   include RegistrationsHelper
 
+  def new
+  end
+
   def update
     if current_user.avatar.attach(params['/users'][:avatar])
       redirect_to root_path, notice: 'Avatar updated'
