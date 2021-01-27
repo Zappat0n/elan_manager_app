@@ -1,6 +1,10 @@
 class PresentationsController < ApplicationController
   def index
-    @presentations = current_user.presentations.all
+    unless params[:external]
+      @presentations = current_user.presentations.all
+    else
+      @presentations = current_user.external_presentations.all
+    end
   end
 
   def new

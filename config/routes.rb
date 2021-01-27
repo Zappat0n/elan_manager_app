@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   get 'groups/index'
-  get 'groups/new'
-  get 'groups/show'
+  #get 'groups/new'
+  #post 'groups/:id', to: 'groups#create'
+  #get 'groups/show'
   get 'presentations/index'
   get 'presentations/new'
   root 'static_pages#index'
+
+  resources :groups
 
   devise_for :users, controllers: { registrations: 'registrations' }
 
