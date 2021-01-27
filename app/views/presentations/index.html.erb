@@ -1,2 +1,8 @@
-<h1>Presentations#index</h1>
-<p>Find me in app/views/presentations/index.html.erb</p>
+<h2>
+  Presentations
+</h2>
+
+<%= link_to 'Create New', new_presentation_path%>
+<ul>
+  <%= render @presentations %>
+</ul>

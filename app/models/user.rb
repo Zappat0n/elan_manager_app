@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :presentations_external, -> { where('group_id IS NULL') }, class_name: 'Presentation', foreign_key: 'author_id'
+  has_many :presentations_external, lambda {
+                                      where('group_id IS NULL')
+                                    }, class_name: 'Presentation', foreign_key: 'author_id'
   has_many :external_presentations, through: :presentations_external, source: :author
 
   has_many :presentations, -> { where('group_id IS NOT NULL') }, foreign_key: 'author_id'

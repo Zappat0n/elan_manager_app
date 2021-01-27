@@ -1,2 +1,20 @@
-<h1>Presentations#new</h1>
-<p>Find me in app/views/presentations/new.html.erb</p>
+<div class="container-fluid d-flex align-items-center">
+  <div class="card my-5 shadow-lg col-xs-9 col-md-6 col-lg-3 mx-auto">
+    <h2 class= "card-header text-center">Create presentation</h2>
+    <%= form_for(@presentation) do |f| %>
+      <div class="field pt-3">
+        <%= f.label :name%>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field pt-3">
+        <%= f.label :group_id%>
+        <%= f.collection_select :group_id, current_user.groups.all.order(:name), :id, :name, include_blank: true %>
+      </div>
+      <div class="field d-flex flex-row pt-3">
+        <%= f.label 'Score: ' %>
+        <%= f.text_field :amount, class: "ml-3" %>
+      </div>
+      <%= f.submit 'Create', class: "my-4" %>
+    <% end %>
+  </div>
+</div>
