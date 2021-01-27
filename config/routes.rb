@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'groups/index'
+  get 'groups/new'
+  get 'groups/show'
   get 'presentations/index'
   get 'presentations/new'
   root 'static_pages#index'
