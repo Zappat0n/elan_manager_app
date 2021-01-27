@@ -1,3 +1,7 @@
+<% @presentation.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+
 <div class="container-fluid d-flex align-items-center">
   <div class="card my-5 shadow-lg col-xs-9 col-md-6 col-lg-3 mx-auto">
     <h2 class= "card-header text-center">Create presentation</h2>
@@ -6,10 +10,12 @@
         <%= f.label :name%>
         <%= f.text_field :name %>
       </div>
-      <div class="field pt-3">
-        <%= f.label :group_id%>
-        <%= f.collection_select :group_id, current_user.groups.all.order(:name), :id, :name, include_blank: true %>
-      </div>
+      <% if current_user.groups.any? %>
+        <div class="field pt-3">
+          <%= f.label :group_id%>
+          <%= f.collection_select :group_id, current_user.groups.all.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
       <div class="field d-flex flex-row pt-3">
         <%= f.label 'Score: ' %>
         <%= f.text_field :amount, class: "ml-3" %>
