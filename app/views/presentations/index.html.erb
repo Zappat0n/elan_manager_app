@@ -3,6 +3,8 @@
 </h2>
 
 <%= link_to 'Create New', new_presentation_path%>
-<ul>
-  <%= render @presentations %>
-</ul>
+
+<div class="container-fluid d-flex flex-row shadow-lg my-3 align-items-center">
+  <h3>Average: <%= @presentations.average(:amount) %> </h3>
+</div>
+<%= render @presentations %>

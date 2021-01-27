@@ -14,7 +14,7 @@ class PresentationsController < ApplicationController
   end
 
   def create
-    #TODO : Redidirect with params to see if external or not
+    # TODO : Redirect with params to see if external or not
     presentation = current_user.presentations.build(presentation_params)
     if presentation.save
       redirect_to presentations_index_path, notice: 'Presentation saved'

@@ -1,13 +1,21 @@
-<li class = "container d-flex flex-row">
+<div class = "container-fluid d-flex flex-row shadow-lg my-3 align-items-center">
   <% if presentation.group %>
     <div class="field mx-2">
-      <%= presentation.group.name %>
+      <%= image_tag presentation.group.avatar.variant(resize_to_limit: [50,50]), class: 'p-5' %>
     </div>
   <% end %>
-  <div class="field mx-2">
-    <%= presentation.name %>
+  <div class="right-side">
+    <div class="top d-flex flex-row justify-content-between">
+      <div class="field mx-2 mb-3">
+        <%= presentation.name %>
+      </div>
+
+      <div class="field mx-2">
+        <strong><%= presentation.amount %></strong>
+      </div>
+    </div>
+    <div class="bottom mx-2">
+      <small><%= presentation.created_at.to_date %></small>
+    </div>
   </div>
-  <div class="field mx-2">
-    <%= presentation.amount %>
-  </div>
-</li>
+</div>
