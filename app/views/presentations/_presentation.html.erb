@@ -1,0 +1,13 @@
+<li class = "container d-flex flex-row">
+  <% if presentation.group %>
+    <div class="field mx-2">
+      <%= presentation.group.name %>
+    </div>
+  <% end %>
+  <div class="field mx-2">
+    <%= presentation.name %>
+  </div>
+  <div class="field mx-2">
+    <%= presentation.amount %>
+  </div>
+</li>

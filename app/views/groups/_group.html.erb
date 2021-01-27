@@ -1,6 +1,6 @@
 <li>
   <% if group.avatar.attached? %>
     <%= image_tag group.avatar %>
-  <% end %>
+  <% end #.variant(resize_to_limit: [100,100]), class: 'p-5 rounded-circle'%>
   <%= group.name%>
 </li>
