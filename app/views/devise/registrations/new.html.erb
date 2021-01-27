@@ -1,33 +1,35 @@
-<h2>Sign up</h2>
+<div class="container-fluid d-flex align-items-center">
+  <div class="card my-5 shadow-lg col-xs-9 col-md-6 col-lg-3 mx-auto">
+    <h2 class= "card-header text-center">Sign up</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field pt-3">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      <div class="field d-none">
+        <%= f.label :email %>
+        <%= f.email_field :email, value: "a@a.com" %>
+      </div>
+
+      <div class="field d-none">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, value: "123456" %>
+      </div>
+
+      <div class="field d-none">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, value: "123456" %>
+      </div>
+      <div class="actions pt-3 pb-4 d-flex flex-row justify-content-between">
+        <%= f.submit "Sign up" %>
+        <%= link_to "Log in", new_session_path(resource_name) %><br />
+      </div>
+    <% end %>
   </div>
-
-  <div class="field d-none">
-    <%= f.label :email %>
-    <%= f.email_field :email, value: "a@a.com" %>
-  </div>
-
-  <div class="field d-none">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, value: "123456" %>
-  </div>
-
-  <div class="field d-none">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, value: "123456" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
