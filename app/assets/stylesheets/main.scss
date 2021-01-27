@@ -1,0 +1,32 @@
+$primary: #fec866;
+
+$bg-primary: f8f5f0;
+$font1: 'Lustria', serif;
+$font2: 'Lato', sans-serif;
+
+body {
+  background-color: $bg-primary;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  color: $primary !important;
+  background-color: black !important;
+
+  a {
+    color: $primary;
+    font-family: $font1;
+  }
+
+  p {
+    color: $primary;
+    font-family: $font1;
+  }
+}
+
+h2 {
+  font-family: $font2;
+}
