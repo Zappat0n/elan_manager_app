@@ -1,16 +1,5 @@
-<h2 class = "mt-3">
-  <%= current_user.name.capitalize %>
-</h2>
+<% unless current_user %>
 
-<% if current_user.avatar.attached?%>
-  <%= image_tag current_user.avatar.variant(resize_to_limit: [100,100]) %>
 <% else %>
-  <%= form_for(user_registration_path, url: user_registration_path, method: :patch) do |f|%>
-    <div class="d-none">
-      <%= f.text_field :id, value: current_user.id %>
-    </div>
-      File: <%= f.file_field :avatar%>
-      <%= f.submit 'Update Picture' %>
-  <% end%>
+  <% render 'user_show'%>
 <% end %>
-

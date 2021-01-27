@@ -1,3 +1,8 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+$primary: #fec866;
+
+$bg-primary: black;
+
+.navbar {
+  color: blue;
+  background-color: $bg-primary;
+}
