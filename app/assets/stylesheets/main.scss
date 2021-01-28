@@ -29,8 +29,8 @@ nav {
   font: normal normal 400 2rem/3rem $font2;
   color: white;
 
-  button {
-    color: white;
+  i {
+    font-size: 3rem;
   }
 
   span {
@@ -82,24 +82,22 @@ h2 {
   }
 
   @media only screen and (max-width: 800px) {
-    width: 75%;
+    width: 95%;
   }
 
   @media only screen and (min-width: 800px) and (max-width: 1024px) {
+    margin: 1rem auto;
     width: 75%;
   }
 
   @media only screen and (min-width: 1024px) {
-    margin: auto;
+    margin: 1rem auto;
     width: 40%;
   }
 }
 
 @mixin my-cards-header {
   display: flex;
-  //justify-content: space-between;
-  //align-items: baseline;
-  //box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
   padding: 3rem;
   font: normal normal 400 2.5rem/3rem $font2;
 
@@ -108,8 +106,16 @@ h2 {
   }
 }
 
+.bg-secundary {
+  background: $secundary !important;
+}
+
 .my-cards-header {
   @include my-cards-header();
+
+  justify-content: space-between;
+  align-items: baseline;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
 }
 
 .my-cards-header-with-picture {

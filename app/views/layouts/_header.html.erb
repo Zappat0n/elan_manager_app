@@ -4,23 +4,24 @@
       <%= image_tag('logo_elan.png', size: '91x18')%>
     </div>
 
-    <% if current_user%>
-      <%= current_user.name.capitalize %>
+    <% if @title%>
+      <%= @title %>
     <% end %>
-    <div class="nav-item dropdown">
-      <i class="fas fa-bars nav-item"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="nav-item dropdown show">
+        <a class="" href="#" role="button" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </a>
         <% if current_user%>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menu">
             <%=link_to "Main page", root_path, class: "dropdown-item"%>
             <%=link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
           </div>
         <% else %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menu">
             <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %>
             <%= link_to "Sign up", users_sign_up_path, class: "dropdown-item" %>
           </div>
         <% end %>
-      </i>
     </div>
   </nav>
 </header>

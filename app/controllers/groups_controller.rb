@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups.all
+    @title = 'GROUPS'
   end
 
   def new
@@ -20,5 +21,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @title = @group.name.upcase
   end
 end

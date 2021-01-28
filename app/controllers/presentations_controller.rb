@@ -2,11 +2,13 @@ class PresentationsController < ApplicationController
   include PresentationsHelper
 
   def index
-    @presentations = if params[:external]
-                       current_user.external_presentations.all
-                     else
-                       current_user.presentations.all
-                     end
+    if params[:external]
+      @presentations = current_user.external_presentations.all
+      @title = 'EXTERNAL PRESENTATIONS'
+    else
+      @presentations = current_user.presentations.all
+      @title = 'PRESENTATIONS'
+    end
   end
 
   def new

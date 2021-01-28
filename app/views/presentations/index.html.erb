@@ -1,15 +1,12 @@
-<div class="my-container">
-<div class="my-cards-header">
-  <div class="my-header-title">
-    Presentations
-  </div>
+<div class="my-cards-header-with-picture">
 <%= link_to 'Create New', new_presentation_path%>
 </div>
 
-<div class="my-cards-header">
-  <div class= "my-header-title" >Average:</div>
-  <div class= "my-header-title" ><%= @presentations.average(:amount).round(2) %></div>
-</div>
+<div class="my-container">
+  <div class="my-cards-header">
+    <div class= "my-header-title" >Average:</div>
+    <div class= "my-header-title" ><%= @presentations.average(:amount).round(2) %></div>
+  </div>
 
-<%= render @presentations.order(created_at: :desc) %>
+  <%= render @presentations.order(created_at: :desc) %>
 </div>
