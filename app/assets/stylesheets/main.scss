@@ -20,24 +20,34 @@ a {
 }
 
 .my-container {
+  color: black;
   background: $secundary;
   padding-bottom: 3rem;
 }
 
 nav {
-  margin: 0;
-  padding: 0;
-  color: $primary !important;
-  background-color: black !important;
+  font: normal normal 400 2rem/3rem $font2;
+  color: white;
+
+  button {
+    color: white;
+  }
+
+  span {
+    font-size: 3rem;
+  }
 
   a {
-    color: $primary;
-    font-family: $font1;
+    color: white;
+    font: normal normal 400 2rem/3rem $font2;
+    text-decoration: none;
+    padding-left: 1rem;
   }
 
   p {
-    color: $primary;
-    font-family: $font1;
+    color: white;
+    font: normal normal 400 2rem/3rem $font2;
+    padding-left: 1rem;
   }
 }
 
@@ -87,8 +97,8 @@ h2 {
 
 @mixin my-cards-header {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  //justify-content: space-between;
+  //align-items: baseline;
   //box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
   padding: 3rem;
   font: normal normal 400 2.5rem/3rem $font2;
@@ -105,7 +115,29 @@ h2 {
 .my-cards-header-with-picture {
   @include my-cards-header();
 
-  align-items: center;
+  flex-direction: column;
+  color: white;
+
+  .image {
+    padding: 0 2rem;
+  }
+
+  .my-header-title {
+    padding: 2rem;
+  }
+
+  a {
+    text-align: left;
+    color: white;
+    padding: 1rem 0;
+    border-bottom: 1px solid white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background: white;
+    color: rgba(10, 30, 100, 1);
+  }
 }
 
 .my-card {
