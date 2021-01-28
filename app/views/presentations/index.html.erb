@@ -4,7 +4,11 @@
 
 <%= link_to 'Create New', new_presentation_path%>
 
-<div class="container-fluid d-flex flex-row shadow-lg my-3 align-items-center">
-  <h3>Average: <%= @presentations.average(:amount) %> </h3>
+<div class="container-fluid d-flex flex-column my-3 align-items-center">
+  <div class="title">
+    <h3>Average: <%= @presentations.average(:amount) %> </h3>
+  </div>
 </div>
+
 <%= render @presentations.order(created_at: :desc) %>
+

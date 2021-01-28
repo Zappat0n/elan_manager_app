@@ -1,7 +1,10 @@
+<div>
+  <div class="my-cards-header">
+    <div class="my-header-title">
+      Groups
+    </div>
+    <%= link_to 'Create New', new_group_path%>
+  </div>
 
-<h2>
-  Groups
-</h2>
-
-<%= link_to 'Create New', new_group_path%>
-<%= render @groups.order(:name) %>
+  <%= render @groups.order(:name) %>
+</div>

@@ -1,18 +1,25 @@
 $primary: #fec866;
+$secundary: white;
 
-$bg-primary: f8f5f0;
+$bg-primary: rgb(10.6, 29.4, 48.6);
+$bg-secundary: f8f5f0;
 $font1: 'Lustria', serif;
 $font2: 'Lato', sans-serif;
 
 body {
-  background-color: $bg-primary;
+  color: black;
+  background-color: $bg-secundary;
+  background-size: cover;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 nav {
+  margin: 0;
+  padding: 0;
   color: $primary !important;
   background-color: black !important;
 
@@ -33,17 +40,27 @@ h2 {
 
 @mixin my-card {
   display: flex;
+  justify-content: space-between;
   box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
   margin: 1rem;
 
+  .image {
+    padding: 2rem;
+  }
+
+  .left-side,
+  .right-side {
+    padding: 0 2rem;
+  }
+
   .my-title {
     font: normal normal 700 2rem/3rem $font2;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .my-date {
     font: normal normal 400 1.5rem/3rem $font2;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   @media only screen and (max-width: 800px) {
@@ -59,6 +76,42 @@ h2 {
   }
 }
 
+@mixin my-cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+  padding: 3rem;
+  font: normal normal 400 2.5rem/3rem $font2;
+
+  .my-header-title {
+    font-weight: 700;
+  }
+}
+
+.my-cards-header {
+  @include my-cards-header();
+}
+
+.my-cards-header-with-picture {
+  @include my-cards-header();
+
+  align-items: center;
+}
+
 .my-card {
   @include my-card();
+
+  align-items: baseline;
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
+.my-card-with-picture {
+  @include my-card();
+}
+
+.my-container {
+  background: rgb(112, 155, 199);
+  background: linear-gradient(45deg, rgba(112, 155, 199, 1) 0%, rgba(10, 30, 100, 1) 56%, rgba(19, 10, 84, 1) 100%) no-repeat;
 }
