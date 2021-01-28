@@ -1,6 +1,16 @@
-<li>
-  <% if group.avatar.attached? %>
-    <%= image_tag group.avatar.variant(resize_to_limit: [100,100]), class: 'p-5 rounded-circle' %>
-  <% end %>
-  <%= group.name%>
-</li>
+<%= link_to group, class:"text-overlay" do %>
+  <div class="my-card">
+      <% if group.avatar.attached? %>
+        <%= image_tag group.avatar.variant(resize_to_limit: [100,100]), class: 'p-5' %>
+      <% end %>
+      <div class="right-side">
+        <div class="my-title">
+          <%= group.name%>
+        </div>
+        <div class="my-date">
+          <%= group.created_at.to_date%>
+        </div>
+      </div>
+    </div>
+  </a>
+<% end %>

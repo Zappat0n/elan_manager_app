@@ -30,3 +30,35 @@ nav {
 h2 {
   font-family: $font2;
 }
+
+@mixin my-card {
+  display: flex;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+  margin: 1rem;
+
+  .my-title {
+    font: normal normal 700 2rem/3rem $font2;
+    margin-top: 3rem;
+  }
+
+  .my-date {
+    font: normal normal 400 1.5rem/3rem $font2;
+    margin-top: 3rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 75%;
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1024px) {
+    width: 50%;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    width: 30%;
+  }
+}
+
+.my-card {
+  @include my-card();
+}
