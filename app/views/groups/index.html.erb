@@ -5,5 +5,5 @@
 
 <%= link_to 'Create New', new_group_path%>
 <ul>
-  <%= render @groups %>
+  <%= render @groups.order(:name) %>
 </ul>
