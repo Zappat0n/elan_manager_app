@@ -38,8 +38,14 @@ h2 {
   font-family: $font2;
 }
 
+.my-container {
+  background: rgb(112, 155, 199);
+  background: linear-gradient(45deg, rgba(112, 155, 199, 1) 0%, rgba(10, 30, 100, 1) 56%, rgba(19, 10, 84, 1) 100%) no-repeat;
+}
+
 @mixin my-card {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
   margin: 1rem;
@@ -68,11 +74,12 @@ h2 {
   }
 
   @media only screen and (min-width: 800px) and (max-width: 1024px) {
-    width: 50%;
+    width: 75%;
   }
 
   @media only screen and (min-width: 1024px) {
-    width: 30%;
+    margin: auto;
+    width: 40%;
   }
 }
 
@@ -109,9 +116,4 @@ h2 {
 
 .my-card-with-picture {
   @include my-card();
-}
-
-.my-container {
-  background: rgb(112, 155, 199);
-  background: linear-gradient(45deg, rgba(112, 155, 199, 1) 0%, rgba(10, 30, 100, 1) 56%, rgba(19, 10, 84, 1) 100%) no-repeat;
 }

@@ -1,14 +1,13 @@
-<h2>
-  Presentations
-</h2>
-
-<%= link_to 'Create New', new_presentation_path%>
-
-<div class="container-fluid d-flex flex-column my-3 align-items-center">
-  <div class="title">
-    <h3>Average: <%= @presentations.average(:amount) %> </h3>
+<div class="my-cards-header">
+  <div class="my-header-title">
+    Presentations
   </div>
+<%= link_to 'Create New', new_presentation_path%>
+</div>
+
+<div class="my-cards-header">
+  <div class= "my-header-title" >Average:</div>
+  <div class= "my-header-title" ><%= @presentations.average(:amount).round(2) %></div>
 </div>
 
 <%= render @presentations.order(created_at: :desc) %>
-
