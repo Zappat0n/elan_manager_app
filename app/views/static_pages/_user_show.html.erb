@@ -1,4 +1,16 @@
-<div class="my-container">
+<div class="my-cards-header-with-picture">
+  <%= image_tag current_avatar.variant(resize_to_limit: [100,100]), class: 'pt-3 rounded-circle' %>
+  <div class = "my-header-title">
+    <%= current_user.name.capitalize %>
+  </div>
+    <%= link_to 'Create New', new_group_path%>
+</div>
+<ul>
+  <li><%= link_to 'All my presentations', presentations_index_path %></li>
+  <li><%= link_to 'All my external presentations', presentations_index_path(external: 'true') %></li>
+  <li><%= link_to 'All my groups', groups_index_path %></li>
+</ul>
+<!--
   <div class="container d-flex flex-row align-items-center">
     <%= image_tag current_avatar.variant(resize_to_limit: [100,100]), class: 'p-5 rounded-circle' %>
     <%= form_for(user_registration_path, url: user_registration_path, method: :patch) do |f|%>
@@ -14,9 +26,4 @@
     <%= current_user.name.capitalize %>
   </h2>
 
-  <ul>
-    <li><%= link_to 'All my presentations', presentations_index_path %></li>
-    <li><%= link_to 'All my external presentations', presentations_index_path(external: 'true') %></li>
-    <li><%= link_to 'All my groups', groups_index_path %></li>
-  </ul>
-</div>
+-->
