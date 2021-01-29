@@ -1,5 +1,15 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import './main';
-@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('Proxima Nova Alt Light.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('Proxima Nova Alt Bold.otf');
+  font-weight: 700;
+}

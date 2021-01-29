@@ -3,10 +3,10 @@ class PresentationsController < ApplicationController
 
   def index
     if params[:external]
-      @presentations = current_user.external_presentations.all
+      @presentations = current_user.external_presentations.includes(:group)
       @title = 'EXTERNAL PRESENTATIONS'
     else
-      @presentations = current_user.presentations.all
+      @presentations = current_user.presentations.includes(:group)
       @title = 'PRESENTATIONS'
     end
   end

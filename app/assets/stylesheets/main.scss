@@ -1,14 +1,14 @@
-$primary: #fec866;
-$secundary: white;
+$primary: #3778c2;
+$secundary: #5fb523;
+$tertiary: #434b54;
 
-$bg-primary: rgb(10.6, 29.4, 48.6);
-$bg-secundary: f8f5f0;
-$font1: 'Lustria', serif;
-$font2: 'Lato', sans-serif;
+$bg-primary: #3778c2;
+$bg-secundary: #f2f2f2;//e6e6e6;
+$font: 'Proxima Nova', sans-serif;
 
 body {
   color: black;
-  background: rgb(112, 155, 199);
+  background: $bg-primary;
   background: linear-gradient(45deg, rgba(112, 155, 199, 1) 0%, rgba(10, 30, 100, 1) 56%, rgba(19, 10, 84, 1) 100%) no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -21,12 +21,12 @@ a {
 
 .my-container {
   color: black;
-  background: $secundary;
+  background: $bg-secundary;
   padding-bottom: 3rem;
 }
 
 nav {
-  font: normal normal 400 2rem/3rem $font2;
+  font: normal normal 400 2rem/3rem $font;
   color: white;
 
   i {
@@ -39,20 +39,20 @@ nav {
 
   a {
     color: white;
-    font: normal normal 400 2rem/3rem $font2;
+    font: normal normal 400 2rem/3rem $font;
     text-decoration: none;
     padding-left: 1rem;
   }
 
   p {
     color: white;
-    font: normal normal 400 2rem/3rem $font2;
+    font: normal normal 400 2rem/3rem $font;
     padding-left: 1rem;
   }
 }
 
 h2 {
-  font-family: $font2;
+  font-family: $font;
 }
 
 @mixin my-card {
@@ -72,12 +72,12 @@ h2 {
   }
 
   .my-title {
-    font: normal normal 700 2rem/3rem $font2;
+    font: normal normal 700 2rem/3rem $font;
     margin-top: 2rem;
   }
 
   .my-date {
-    font: normal normal 400 1.5rem/3rem $font2;
+    font: normal normal 400 1.5rem/3rem $font;
     margin-top: 2rem;
   }
 
@@ -99,7 +99,7 @@ h2 {
 @mixin my-cards-header {
   display: flex;
   padding: 3rem;
-  font: normal normal 400 2.5rem/3rem $font2;
+  font: normal normal 400 2.5rem/3rem $font;
 
   .my-header-title {
     font-weight: 700;
@@ -107,7 +107,7 @@ h2 {
 }
 
 .bg-secundary {
-  background: $secundary !important;
+  background: $bg-secundary !important;
 }
 
 .my-cards-header {
