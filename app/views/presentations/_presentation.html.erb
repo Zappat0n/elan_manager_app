@@ -1,0 +1,18 @@
+<div class = "my-card-with-picture">
+  <% if presentation.group %>
+    <div class="image">
+      <%= image_tag presentation.group.avatar.variant(resize_to_limit: [100,100]) %>
+    </div>
+  <% end %>
+  <div class="left-side">
+    <div class="my-title">
+      <%= presentation.name %>
+    </div>
+    <div class="my-date">
+      <%= presentation.created_at.to_date %>
+    </div>
+  </div>
+  <div class="right-side my-title">
+    <%= presentation.amount %>
+  </div>
+</div>

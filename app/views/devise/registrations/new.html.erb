@@ -1,0 +1,27 @@
+<div class="my-form-card">
+  <h2 class= "card-header text-center">Sign up</h2>
+  <%= form_for(resource, as: resource_name, url: users_path) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "name", class: "field" %>
+    <div class="field d-none">
+      <%= f.label :email %>
+      <%= f.email_field :email, value: "a@a.com" %>
+    </div>
+    <div class="field d-none">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, value: "123456" %>
+    </div>
+    <div class="field d-none">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, value: "123456" %>
+    </div>
+
+    <%= f.file_field :avatar, accept: 'image/png,image/jpeg', class: "ml-3 field" %>
+    <div class = "mx-auto  d-flex flex-center">
+      <%= f.submit "Sign up", class: "button" %>
+    </div>
+  <% end %>
+</div>

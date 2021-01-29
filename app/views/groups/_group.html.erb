@@ -1,0 +1,15 @@
+<%= link_to group, class:"text-overlay link-box" do %>
+  <div class="my-card-with-picture">
+    <% if group.avatar.attached? %>
+      <%= image_tag group.avatar.variant(resize_to_limit: [100,100]), class: "image" %>
+    <% end %>
+    <div class="left-side">
+      <div class="my-title">
+        <%= group.name%>
+      </div>
+      <div class="my-date">
+        <%= group.created_at.to_date%>
+      </div>
+    </div>
+  </div>
+<% end %>

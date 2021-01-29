@@ -1,0 +1,19 @@
+<% @presentation.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+
+<div class="my-form-card">
+  <h2 class= "card-header text-center">Create presentation</h2>
+  <%= form_for(@presentation) do |f| %>
+    <%= f.text_field :name, placeholder: :name, class: "field" %>
+    <% if current_user.groups.any? %>
+    <div class="field w-100">
+      <%= f.collection_select :group_id, current_user.groups.all.order(:name), :id, :name, include_blank: true %>
+    </div>
+    <% end %>
+    <%= f.text_field :amount, class: "ml-3", placeholder: 'Score', class: "field" %>
+    <div class = "mx-auto b-danger d-flex flex-center">
+      <%= f.submit 'Create', class: "button" %>
+    </div>
+  <% end %>
+</div>

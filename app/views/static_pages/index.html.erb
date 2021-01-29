@@ -1,0 +1,10 @@
+<% unless current_user %>
+  <div class="container">
+    <div class="row flex-column justify-content-center">
+      <h2 class = "text-center text-white py-5">Welcome to Elan Manager!</h2>
+      <h4 class = "text-center text-white mx-5">Here you will be able to keep track of your exercises and your scores sorted by subject.</h4>
+    </div>
+  </div>
+<% else %>
+  <%= render 'static_pages/user_show'%>
+<% end %>
