@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-  get 'groups/index'
-  #get 'groups/new'
-  #post 'groups/:id', to: 'groups#create'
-  #get 'groups/show'
-  get 'presentations/index'
-  get 'presentations/new'
   root 'static_pages#index'
 
-  resources :groups
-  resources :presentations
+  resources :groups, only: [:index, :new, :create, :show, :destroy]
+  resources :presentations, only: [:new, :create, :index, :destroy]
 
   devise_scope :user do
     get '/users/sign_in', to: 'devise/sessions#new'
@@ -20,6 +14,4 @@ Rails.application.routes.draw do
     delete '/users', to: 'devise/registrations#destroy'
     patch '/users/', to: 'registrations#update'
   end
-
-  #devise_for :users, controllers: { registrations: 'registrations' }
 end
