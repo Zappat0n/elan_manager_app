@@ -12,6 +12,7 @@ class PresentationsController < ApplicationController
   end
 
   def new
+    @title = 'NEW PRESENTATION'
     @presentation = current_user.presentations.build
   end
 
@@ -19,7 +20,7 @@ class PresentationsController < ApplicationController
     # TODO : Redirect with params to see if external or not
     presentation = current_user.presentations.build(presentation_params)
     if presentation.save
-      redirect_to presentations_index_path, notice: 'Presentation saved'
+      redirect_to presentations_path, notice: 'Presentation saved'
     else
       redirect_to new_presentation_path, alert: 'Error saving presentation'
     end

@@ -1,7 +1,8 @@
 module ApplicationHelper
-  def update_avatar
-    current_user.avatar = params[:avatar]
-    current_user.sava
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name email avatar])
+    devise_parameter_sanitizer.permit(:edit, keys: %i[name email avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name email avatar])
   end
 
   def current_avatar
