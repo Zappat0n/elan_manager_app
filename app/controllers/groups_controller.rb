@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
+    @group = Group.includes(:user).find(params[:id])
     @title = @group.name.upcase
   end
 end
