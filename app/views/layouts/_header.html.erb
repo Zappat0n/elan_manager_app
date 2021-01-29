@@ -16,39 +16,14 @@
         <% if current_user%>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menu">
             <%=link_to "Main page", root_path, class: "dropdown-item"%>
-            <%=link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
+            <%=link_to "Sign out", users_sign_out_path, method: :delete, class: "dropdown-item"%>
           </div>
         <% else %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menu">
-            <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Sign in", users_sign_in_path, class: "dropdown-item" %>
             <%= link_to "Sign up", users_sign_up_path, class: "dropdown-item" %>
           </div>
         <% end %>
     </div>
   </nav>
 </header>
-<!--
-    <a class="navbar-brand d-flex flex-row align-items-baseline mx-3" href="/">
-      <i class="fas fa-bars"></i>
-      <%= image_tag('logo_elan.png', size: '91x18')%>
-      <p class = "mx-3"> Manager</p>
-    </a>
-    <div class="navbar-brand d-flex flex-row">
-      <% if current_user%>
-        <div class="nav-item active mx-3">
-          <%= current_user.name.capitalize %>
-        </div>
-        <div class="nav-item mx-3">
-          <%=link_to "Sign out", destroy_user_session_path, method: :delete%>
-        </div>
-      <% else %>
-        <div class="nav-item mx-3">
-          <%= link_to "Sign in", new_user_session_path %>
-        </div>
-        <div class="nav-item mx-3">
-          <%= link_to "Sign up", users_sign_up_path %>
-        </div>
-      <% end %>
-    </div>
-
--->

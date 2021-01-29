@@ -1,6 +1,6 @@
 <div class="my-form-card">
   <h2 class= "card-header text-center">Log in</h2>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: users_sign_in_path(resource)) do |f| %>
     <%= f.text_field :name, autofocus: true, placeholder: :name, autocomplete: "name", class: "field" %>
     <%= f.password_field :password, value: "123456", class: "d-none" %>
     <% if devise_mapping.rememberable? %>
@@ -9,7 +9,7 @@
         <%= f.label :remember_me %>
       </div>
     <% end %>
-    <div class = "mx-auto b-danger d-flex flex-center">
+    <div class = "mx-auto d-flex flex-center">
       <%= f.submit "Log in", class: "button" %>
     </div>
   <% end %>

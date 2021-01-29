@@ -28,8 +28,13 @@
             <%= presentation.created_at.to_date%>
           </div>
         </div>
-        <div class="right-side my-title">
-          <%= presentation.amount%>
+        <div class="right-side">
+          <div class="my-title">
+            <%= presentation.amount%>
+          </div>
+          <div class="my-date">
+            <%= presentation.author.name %>
+          </div>
         </div>
       </div>
     <% end %>

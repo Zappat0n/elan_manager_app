@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :external_presentations, -> { where('group_id IS NULL') },
-           class_name: 'Presentation', foreign_key: 'author_id'
-  has_many :presentations, -> { where('group_id IS NOT NULL') }, foreign_key: 'author_id'
+           class_name: 'Presentation', foreign_key: 'author_id', dependent: :destroy
+  has_many :presentations, -> { where('group_id IS NOT NULL') }, foreign_key: 'author_id', dependent: :destroy
 
   has_many :groups, dependent: :destroy
 
@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true, length: { minimum: 3 }
 
-  has_one_attached :avatar
+  has_one_attached :avatar, dependent: :destroy
   validate :acceptable_image
 
   def acceptable_image

@@ -5,24 +5,9 @@
   <div class = "my-header-title">
     <%= current_user.name.capitalize %>
   </div>
+
+  <%= link_to 'Account settings', users_edit_path %>
   <%= link_to 'All my presentations', presentations_index_path %>
   <%= link_to 'All my external presentations', presentations_index_path(external: 'true') %>
   <%= link_to 'All my groups', groups_index_path %>
 </div>
-<!--
-  <div class="container d-flex flex-row align-items-center">
-    <%= image_tag current_avatar.variant(resize_to_limit: [100,100]), class: 'p-5 rounded-circle' %>
-    <%= form_for(user_registration_path, url: user_registration_path, method: :patch) do |f|%>
-      <div class="d-none">
-        <%= f.text_field :id, value: current_user.id %>
-      </div>
-      File: <%= f.file_field :avatar%>
-      <%= f.submit 'Update Picture' %>
-    <% end%>
-  </div>
-
-  <h2 class = "mx-5 mt-0">
-    <%= current_user.name.capitalize %>
-  </h2>
-
--->

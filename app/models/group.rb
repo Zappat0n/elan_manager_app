@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
   belongs_to :user
-  has_many :presentations
+  has_many :presentations, dependent: :destroy
 
   validates :name, presence: true
 

@@ -1,6 +1,6 @@
 <div class="my-form-card">
   <h2 class= "card-header text-center">Sign up</h2>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: users_sign_up_path(resource)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "name", class: "field" %>
     <div class="field d-none">
@@ -19,8 +19,8 @@
       <%= f.password_field :password_confirmation, value: "123456" %>
     </div>
 
-    <%= f.file_field :avatar, accept: 'image/png,image/jpeg', class: "field" %>
-    <div class = "mx-auto b-danger d-flex flex-center">
+    <%= f.file_field :avatar, accept: 'image/png,image/jpeg', class: "ml-3 field" %>
+    <div class = "mx-auto  d-flex flex-center">
       <%= f.submit "Sign up", class: "button" %>
     </div>
   <% end %>
