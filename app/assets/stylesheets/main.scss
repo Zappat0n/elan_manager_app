@@ -15,8 +15,13 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: black;
+}
+
+.link-box :hover {
+  background: rgba(10, 30, 100, 1);
+  color: white;
 }
 
 .my-container {
@@ -56,11 +61,8 @@ h2 {
 }
 
 @mixin my-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
   margin: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
 
   .image {
     padding: 2rem;
@@ -146,9 +148,35 @@ h2 {
   }
 }
 
+.my-form-card {
+  @include my-card();
+
+  background: $bg-secundary;
+  border-radius: 1rem;
+
+  .field {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    font: normal normal 400 2rem/3rem $font;
+  }
+
+  .button {
+    text-align: center;
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 0;
+    border: 2px solid lightgray;
+    color: gray;
+  }
+}
+
 .my-card {
   @include my-card();
 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: baseline;
   padding-top: 0;
   padding-bottom: 1rem;
@@ -156,4 +184,8 @@ h2 {
 
 .my-card-with-picture {
   @include my-card();
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

@@ -1,16 +1,11 @@
-<div class="container-fluid d-flex align-items-center">
-  <div class="card my-5 shadow-lg col-xs-9 col-md-6 col-lg-3 mx-auto">
+<div class="my-form-card">
     <h2 class= "card-header text-center">Create group</h2>
-    <%= form_for(@group) do |f| %>
-      <div class="field pt-3">
-        <%= f.label :name%>
-        <%= f.text_field :name %>
+    <%= form_for @group, html: { multipart: true } do |f| %>
+      <%= f.text_field :name, placeholder: :name, class: "field" %>
+      <%= f.file_field :avatar, accept: 'image/png,image/jpeg', class: "ml-3 field" %>
+      <div class = "mx-auto b-danger d-flex flex-center">
+        <%= f.submit 'Create', class: "my-4 button" %>
       </div>
-      <div class="field d-flex flex-row pt-3">
-        <%= f.label 'Icon: ' %>
-        <%= f.file_field :avatar, class: "ml-3" %>
-      </div>
-      <%= f.submit 'Create', class: "my-4" %>
     <% end %>
   </div>
 </div>

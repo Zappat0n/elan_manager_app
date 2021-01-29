@@ -2,11 +2,13 @@
 <%= link_to 'Create New', new_presentation_path%>
 </div>
 
-<div class="my-container">
-  <div class="my-cards-header">
-    <div class= "my-header-title" >Average:</div>
-    <div class= "my-header-title" ><%= @presentations.average(:amount).round(2) %></div>
-  </div>
+<% if @presentations.any? %>
+  <div class="my-container">
+    <div class="my-cards-header">
+      <div class= "my-header-title" >Average:</div>
+      <div class= "my-header-title" ><%= @presentations.average(:amount).round(2) %></div>
+    </div>
 
-  <%= render @presentations.order(created_at: :desc) %>
-</div>
+    <%= render @presentations.order(created_at: :desc) %>
+  </div>
+<% end %>
