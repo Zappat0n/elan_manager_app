@@ -6,8 +6,8 @@
     <%= current_user.name.capitalize %>
   </div>
 
-  <%= link_to 'Account settings', users_edit_path %>
-  <%= link_to 'All my presentations', presentations_index_path %>
-  <%= link_to 'All my external presentations', presentations_index_path(external: 'true') %>
-  <%= link_to 'All my groups', groups_index_path %>
+  <%= link_to 'Account settings', edit_user_path(current_user) %>
+  <%= link_to 'All my presentations', presentations_path %>
+  <%= link_to 'All my external presentations', presentations_path(external: 'true') %>
+  <%= link_to 'All my groups', groups_path %>
 </div>

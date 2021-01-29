@@ -1,6 +1,6 @@
 <div class="my-form-card">
   <h2 class= "card-header text-center">Edit</h2>
-  <%= form_for(resource, as: resource_name, url: users_path, html: { method: :patch }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: user_path(resource), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "d-none" %>
@@ -45,6 +45,6 @@
 
   <h3 class= "card-header text-center">Cancel my account</h3>
   <div class= "card-header text-center d-flex flex-row justify-content-center align-items-center">
-    <p class="m-4" >Unhappy? <%= button_to "Cancel my account", users_path, data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <p class="m-4" >Unhappy? <%= button_to "Cancel my account", user_path(resource), data: { confirm: "Are you sure?" }, method: :delete %></p>
   </div>
 </div>

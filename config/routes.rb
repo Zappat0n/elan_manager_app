@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     post '/users/:id', to: 'devise/sessions#create'
     delete '/users/sign_out', to: 'devise/sessions#destroy'
     get '/users/sign_up', to: 'devise/registrations#new'
-    post '/users/:id', to: 'devise/registrations#create'
-    get '/users/edit', to: 'devise/registrations#edit'
-    delete '/users', to: 'devise/registrations#destroy'
-    patch '/users/', to: 'registrations#update'
+    post '/users', to: 'devise/registrations#create', as: :users
+    get '/users/:id/edit', to: 'devise/registrations#edit', as: :edit_user
+    delete '/users/:id', to: 'devise/registrations#destroy'
+    put '/users/:id', to: 'registrations#update', as: :user
   end
 end
