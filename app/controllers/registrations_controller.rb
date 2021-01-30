@@ -1,6 +1,8 @@
 class RegistrationsController < ApplicationController
   include RegistrationsHelper
 
+  before_action :authenticate_user!
+
   def new; end
 
   def update

@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
   include GroupsHelper
 
+  before_action :authenticate_user!
+
   def index
     @groups = current_user.groups.all
     @title = 'GROUPS'
