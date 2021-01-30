@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :new, :create, :show, :destroy]
   resources :presentations, only: [:new, :create, :index, :destroy]
 
+  devise_for :users, skip: :all
+
   devise_scope :user do
     get '/users/sign_in', to: 'devise/sessions#new'
     post '/users/:id', to: 'devise/sessions#create'
@@ -14,4 +16,5 @@ Rails.application.routes.draw do
     delete '/users/:id', to: 'devise/registrations#destroy'
     put '/users/:id', to: 'registrations#update', as: :user
   end
+
 end

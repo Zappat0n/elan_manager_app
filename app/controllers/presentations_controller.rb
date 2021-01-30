@@ -1,6 +1,8 @@
 class PresentationsController < ApplicationController
   include PresentationsHelper
 
+  before_action :authenticate_user!
+
   def index
     if params[:external]
       @presentations = current_user.external_presentations.includes(:group)
