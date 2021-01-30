@@ -98,11 +98,6 @@ GEM
     erubi (1.10.0)
     eventmachine (1.2.7)
     execjs (2.7.0)
-    factory_bot (6.1.0)
-      activesupport (>= 5.0.0)
-    factory_bot_rails (6.1.0)
-      factory_bot (~> 6.1.0)
-      railties (>= 5.0.0)
     ffi (1.14.2)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -294,7 +289,6 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
-  factory_bot_rails
   guard
   guard-livereload
   hirb
