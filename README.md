@@ -41,16 +41,18 @@ I have used different concepts of Ruby on Rails including:
 In the main menu, you will see the following options:
 - Account settings: You will be able to update your picture and your account name.
 
-![screenshot](./app/assets/images/screenshot1.png)
+<img src="./app/assets/images/screenshot1.png" width="256">
 
 - All my presentations: To see your exercises that belong to one group with its score.
 
-![screenshot](./app/assets/images/screenshot3.png)
+<img src="./app/assets/images/screenshot3.png" width="256">
+
 
 - All my external presentations: To see all the exercises that do not belong to any group.
 
 - All my groups: Here you can see all your subjects and create new ones. You can also select a group and see all the exercises for that group and the average score.
-![screenshot](./app/assets/images/screenshot2.png)
+
+<img src="./app/assets/images/screenshot2.png" width="256">
 
 
 Inside the presentations and groups page, you can create new presentations and groups with its picture.
