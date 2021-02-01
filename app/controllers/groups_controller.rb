@@ -16,9 +16,9 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.groups.build(group_params)
     if @group.save
-      redirect_to groups_path, notice: 'Group saved'
+      redirect_to groups_path, notice: 'Group saved.'
     else
-      redirect_to groups_path, alert: 'Error saving group'
+      redirect_to new_group_path, alert: 'Error saving group.'
     end
   end
 
