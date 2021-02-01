@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "SignIns", type: :feature do
+RSpec.feature 'SignIns', type: :feature do
   before :each do
     @user = User.create(name: 'Peter', email: 'x@x.com', password: '123456')
     visit users_sign_in_path
