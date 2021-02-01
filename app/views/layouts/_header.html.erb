@@ -1,15 +1,17 @@
 <header>
-  <nav class="navbar-expand-lg bg-transparent d-flex justify-content-between align-items-baseline border-bottom-1 px-5">
-    <div class="navbar-brand">
+  <nav class="navbar-expand-lg bg-transparent d-flex justify-content-between align-items-baseline border-bottom-1 px-0">
+    <div class="navbar-brand px-0 mx-0">
       <%= link_to root_path, class:"text-overlay" do %>
-        <%= image_tag('logo_elan.png', size: '91x18')%>
+        <%= image_tag 'logo_elan.png', size: '91x18' %>
       <% end%>
     </div>
 
     <% if @title%>
-      <%= @title %>
+      <div class="text-center">
+        <%= @title %>
+      </div>
     <% end %>
-    <div class="nav-item dropdown show">
+    <div class="nav-item dropdown show mr-4">
         <a class="" href="#" role="button" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-bars"></i>
         </a>
