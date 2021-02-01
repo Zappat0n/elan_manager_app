@@ -4,10 +4,10 @@
 
 ## Introduction
 
-This is a web application to keep track of your school scores grouped by subject.
+Web application to keep track of your school scores grouped by subject.
 You can create as many subjects as you want and start to save there all your scores.
 
-We used different concepts of Ruby on Rails including:
+I have used different concepts of Ruby on Rails including:
 
 - Models, Views, and Controllers (MVC)
 - Data Structures & Relationships
@@ -38,8 +38,8 @@ We used different concepts of Ruby on Rails including:
 
 ## Elan manager app
 
-In the main menu you will see the following options:
-- Account settings: Here you will be able to update your picture and your account name.
+In the main menu, you will see the following options:
+- Account settings: You will be able to update your picture and your account name.
 
 ![screenshot](./app/assets/images/screenshot1.png)
 
@@ -49,11 +49,11 @@ In the main menu you will see the following options:
 
 - All my external presentations: To see all the exercises that do not belong to any group.
 
-- All my groups: Here you cand see all your subjects and create new ones. You can also select a group and see all the exercises for that group and the average score.
+- All my groups: Here you can see all your subjects and create new ones. You can also select a group and see all the exercises for that group and the average score.
 ![screenshot](./app/assets/images/screenshot2.png)
 
 
-Inside the presentations and groups page you can create new presentations and groups with its own picture.
+Inside the presentations and groups page, you can create new presentations and groups with its picture.
 
 ## Designed With
 
