@@ -12,7 +12,7 @@ class RegistrationsController < ApplicationController
     if current_user.save
       redirect_to root_path, notice: 'Avatar updated.'
     else
-      redirect_to edit_user_path, alert: 'Error updating user.'
+      redirect_to edit_user_path, alert: current_user.errors.first.full_message
     end
   end
 end
