@@ -5,10 +5,10 @@ class PresentationsController < ApplicationController
 
   def index
     if params[:external]
-      @presentations = current_user.external_presentations.includes(group: { avatar_attachment: :blob })
+      @presentations = current_user.presentations.external_presentations.includes(groups: { avatar_attachment: :blob })
       @title = 'EXTERNAL PRESENTATIONS'
     else
-      @presentations = current_user.presentations.includes(group: { avatar_attachment: :blob })
+      @presentations = current_user.presentations.grouped_presentations.includes(groups: { avatar_attachment: :blob })
       @title = 'PRESENTATIONS'
     end
   end
@@ -19,8 +19,12 @@ class PresentationsController < ApplicationController
   end
 
   def create
-    # TODO : Redirect with params to see if external or not
-    presentation = current_user.presentations.build(presentation_params)
+    presentation = current_user.presentations.build
+    presentation.name = presentation_params[:name]
+    presentation.amount = presentation_params[:amount]
+    group = Group.find(presentation_params[:groups])
+    presentation.groups << group
+
     if presentation.save
       redirect_to presentations_path, notice: 'Presentation saved.'
     else

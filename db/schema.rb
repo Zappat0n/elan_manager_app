@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 2021_02_02_103426) do
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
+  create_table "groups_presentations", id: false, force: :cascade do |t|
+    t.bigint "presentation_id"
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_groups_presentations_on_group_id"
+    t.index ["presentation_id"], name: "index_groups_presentations_on_presentation_id"
+  end
+
   create_table "presentations", force: :cascade do |t|
     t.string "name"
     t.decimal "amount"
@@ -58,13 +65,6 @@ ActiveRecord::Schema.define(version: 2021_02_02_103426) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "author_id"
     t.index ["author_id"], name: "index_presentations_on_author_id"
-  end
-
-  create_table "presentations_groups", id: false, force: :cascade do |t|
-    t.bigint "presentation_id"
-    t.bigint "group_id"
-    t.index ["group_id"], name: "index_presentations_groups_on_group_id"
-    t.index ["presentation_id"], name: "index_presentations_groups_on_presentation_id"
   end
 
   create_table "users", force: :cascade do |t|

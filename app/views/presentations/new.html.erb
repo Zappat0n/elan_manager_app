@@ -8,10 +8,10 @@
     <%= f.text_field :name, placeholder: :name, class: "field", id: "presentation_new_name" %>
     <% if current_user.groups.any? %>
       <div class="field w-100">
-        <%= f.collection_select :group_id, current_user.groups.all.order(:name), :id, :name, include_blank: true %>
+        <%= f.collection_select :groups, current_user.groups.all.order(:name), :id, :name, include_blank: true %>
       </div>
     <% end %>
-    <%= f.text_field :amount, placeholder: 'Score', class: "field ml-3", id: "presentation_new_amount" %>
+    <%= f.text_field :amount, placeholder: 'Score', class: "field", id: "presentation_new_amount" %>
     <div class = "mx-auto b-danger d-flex flex-center">
       <%= f.submit 'Create', class: "button" %>
     </div>

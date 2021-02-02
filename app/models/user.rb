@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :external_presentations, -> { where('group_id IS NULL') },
+  has_many :external_presentations,
            class_name: 'Presentation', foreign_key: 'author_id', dependent: :destroy
-  has_many :presentations, -> { where('group_id IS NOT NULL') }, foreign_key: 'author_id', dependent: :destroy
+  has_many :presentations, foreign_key: 'author_id', dependent: :destroy
 
   has_many :groups, dependent: :destroy
 

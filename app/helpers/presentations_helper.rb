@@ -1,15 +1,15 @@
 module PresentationsHelper
   def presentation_params
-    params.require(:presentation).permit(:name, :group_id, :author_id, :amount)
+    params.require(:presentation).permit(:name, :groups, :author_id, :amount)
   end
 
   def icon_or_name(presentation)
-    return unless presentation.group
+    return unless presentation.groups.first
 
-    if presentation.group.avatar.attached?
-      image_tag presentation.group.avatar.variant(resize_to_limit: [75, 75])
+    if presentation.groups.first.avatar.attached?
+      image_tag presentation.groups.first.avatar.variant(resize_to_limit: [75, 75])
     else
-      presentation.group.name
+      presentation.groups.first.name
     end
   end
 end
