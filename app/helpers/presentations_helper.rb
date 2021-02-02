@@ -7,13 +7,9 @@ module PresentationsHelper
     return unless presentation.group
 
     if presentation.group.avatar.attached?
-      # <div class="image">
-      image_tag presentation.group.avatar.variant(resize_to_limit: [75,75])
-      # </div>
+      image_tag presentation.group.avatar.variant(resize_to_limit: [75, 75])
     else
-      # <div class = "my-title ml-5">
       presentation.group.name
-      # </div>
     end
   end
 end

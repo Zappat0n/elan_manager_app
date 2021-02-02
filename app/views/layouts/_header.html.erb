@@ -13,17 +13,11 @@
         <a class="" href="#" role="button" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-bars"></i>
         </a>
-        <% if current_user%>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menu">
-            <%=link_to "Main page", root_path, class: "dropdown-item"%>
-            <%=link_to "Sign out", users_sign_out_path, method: :delete, class: "dropdown-item"%>
-          </div>
-        <% else %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menu">
-            <%= link_to "Sign in", users_sign_in_path, class: "dropdown-item" %>
-            <%= link_to "Sign up", users_sign_up_path, class: "dropdown-item" %>
-          </div>
-        <% end %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menu">
+          <% navbar_dropdown_items.each do |line| %>
+            <%= line %>
+          <% end %>
+        </div>
     </div>
   </nav>
 </header>
