@@ -5,10 +5,10 @@ class PresentationsController < ApplicationController
 
   def index
     if params[:external]
-      @presentations = current_user.external_presentations.includes(:group)
+      @presentations = current_user.external_presentations.includes(group: { avatar_attachment: :blob })
       @title = 'EXTERNAL PRESENTATIONS'
     else
-      @presentations = current_user.presentations.includes(:group)
+      @presentations = current_user.presentations.includes(group: { avatar_attachment: :blob })
       @title = 'PRESENTATIONS'
     end
   end

@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = current_user.groups.all
+    @groups = current_user.groups.includes(avatar_attachment: :blob)
     @title = 'GROUPS'
   end
 
@@ -23,7 +23,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.includes(:user).find(params[:id])
+    @group = Group.includes(presentations: :author).find(params[:id])
     @title = @group.name.upcase
   end
 end
