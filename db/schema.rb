@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_151200) do
+ActiveRecord::Schema.define(version: 2021_02_02_103426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,10 +56,15 @@ ActiveRecord::Schema.define(version: 2021_01_26_151200) do
     t.decimal "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "group_id"
     t.bigint "author_id"
     t.index ["author_id"], name: "index_presentations_on_author_id"
-    t.index ["group_id"], name: "index_presentations_on_group_id"
+  end
+
+  create_table "presentations_groups", id: false, force: :cascade do |t|
+    t.bigint "presentation_id"
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_presentations_groups_on_group_id"
+    t.index ["presentation_id"], name: "index_presentations_groups_on_presentation_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,6 +82,5 @@ ActiveRecord::Schema.define(version: 2021_01_26_151200) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "presentations", "groups"
   add_foreign_key "presentations", "users", column: "author_id"
 end
