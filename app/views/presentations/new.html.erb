@@ -11,7 +11,7 @@
       <%= f.collection_select :group_id, current_user.groups.all.order(:name), :id, :name, include_blank: true %>
     </div>
     <% end %>
-    <%= f.text_field :amount, class: "ml-3", placeholder: 'Score', class: "field", id: "presentation_new_amount" %>
+    <%= f.text_field :amount, placeholder: 'Score', class: "field ml-3", id: "presentation_new_amount" %>
     <div class = "mx-auto b-danger d-flex flex-center">
       <%= f.submit 'Create', class: "button" %>
     </div>
