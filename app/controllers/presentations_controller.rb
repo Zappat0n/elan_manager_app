@@ -22,8 +22,10 @@ class PresentationsController < ApplicationController
     presentation = current_user.presentations.build
     presentation.name = presentation_params[:name]
     presentation.amount = presentation_params[:amount]
-    group = Group.find(presentation_params[:groups])
-    presentation.groups << group
+    if presentation_params[:groups]
+      group = Group.find(presentation_params[:groups])
+      presentation.groups << group
+    end
 
     if presentation.save
       redirect_to presentations_path, notice: 'Presentation saved.'

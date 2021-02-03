@@ -5,7 +5,9 @@
 ## Introduction
 
 Web application to keep track of your school scores grouped by subject.
-You can create as many subjects as you want and start to save there all your scores.
+You can create as many subjects as you want and start to save there all your scores. <br>
+You can create different exercises with their score, and keep them as external (without any group) or assigned to a group. <br>
+You can see your average score for all your grouped presentations, all your external presentations, and for all the presentations included in one group.
 
 I have used different concepts of Ruby on Rails including:
 
@@ -38,24 +40,36 @@ I have used different concepts of Ruby on Rails including:
 
 ## Elan manager app
 
-In the main menu, you will see the following options:
-- Account settings: You will be able to update your picture and your account name.
+In the main menu, you will see the following options:<br>
 
+- Account settings: You will be able to update your picture and your account name.
+<br>
 <img src="./app/assets/images/screenshot1.png" width="256">
+<br>
+<br>
 
 - All my presentations: To see your exercises that belong to one group with its score.
-
+<br>
 <img src="./app/assets/images/screenshot3.png" width="256">
+<br>
+<br>
 
-
-- All my external presentations: To see all the exercises that do not belong to any group.
+- All my external presentations: To see all the exercises that do not belong to
+any group.
+<br>
+<br>
 
 - All my groups: Here you can see all your subjects and create new ones. You can also select a group and see all the exercises for that group and the average score.
-
+<br>
 <img src="./app/assets/images/screenshot2.png" width="256">
-
-
+<br>
+<br>
 Inside the presentations and groups page, you can create new presentations and groups with its picture.
+
+## To run tests
+
+- After runnning `bundle install`, and `rails db:migrate`. Run `bundle exec rails webpacker:install`
+- Run `rspec` to see the results of the tests.
 
 ## Designed With
 
