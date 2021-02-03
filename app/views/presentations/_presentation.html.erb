@@ -1,15 +1,7 @@
 <div class = "my-card-with-picture">
-  <% if presentation.group %>
-    <% if presentation.group.avatar.attached? %>
-      <div class="image">
-        <%= image_tag presentation.group.avatar.variant(resize_to_limit: [75,75]) %>
-      </div>
-    <% else %>
-      <div class = "my-title ml-5">
-        <%= presentation.group.name %>
-      </div>
-    <% end %>
-  <% end %>
+  <div class="image">
+    <%= icon_or_name(presentation) %>
+  </div>
   <div class="left-side">
     <div class="my-title">
       <%= presentation.name %>

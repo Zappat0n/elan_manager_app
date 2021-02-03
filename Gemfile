@@ -63,9 +63,11 @@ group :development do
 end
 
 group :development, :test do
+  gem 'bullet'
   gem 'hirb'
   gem 'rspec-rails'
 end
+
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'jquery-rails'
