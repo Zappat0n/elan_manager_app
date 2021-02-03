@@ -18,8 +18,10 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, value: "123456" %>
     </div>
-
-    <%= f.file_field :avatar, accept: 'image/png,image/jpeg', class: "ml-3 field" %>
+    <div class="field d-flex flex-row align-items-baseline">
+      <p>Avatar:</p>
+      <%= f.file_field :avatar, accept: 'image/png,image/jpeg', class: "ml-3 field" %>
+    </div>
     <div class = "mx-auto  d-flex flex-center">
       <%= f.submit "Sign up", class: "button" %>
     </div>

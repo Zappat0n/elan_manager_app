@@ -7,8 +7,10 @@
   <%= form_for(@presentation) do |f| %>
     <%= f.text_field :name, placeholder: :name, class: "field", id: "presentation_new_name" %>
     <% if current_user.groups.any? %>
-      <div class="field w-100">
+      <div class="field w-100 d-flex flex-row align-items-baseline">
+        <p class="mr-2">Group: </p>
         <%= f.collection_select :groups, current_user.groups.all.order(:name), :id, :name, include_blank: true %>
+        <p class="comment">Empty for external presentations</p>
       </div>
     <% end %>
     <%= f.text_field :amount, placeholder: 'Score', class: "field", id: "presentation_new_amount" %>

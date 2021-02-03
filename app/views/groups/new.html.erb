@@ -2,7 +2,10 @@
     <h2 class= "card-header text-center">Create group</h2>
     <%= form_for @group, html: { multipart: true } do |f| %>
       <%= f.text_field :name, placeholder: :name, class: "field", id: "group_new_name" %>
-      <%= f.file_field :avatar, accept: 'image/png,image/jpeg', class: "ml-3 field" %>
+      <div class="field d-flex flex-row align-items-baseline">
+        <p class="mr-2">Group: </p>
+        <%= f.file_field :avatar, accept: 'image/png,image/jpeg', class: "ml-3 field" %>
+      </div>
       <div class = "mx-auto b-danger d-flex flex-center">
         <%= f.submit 'Create', class: "my-4 button" %>
       </div>

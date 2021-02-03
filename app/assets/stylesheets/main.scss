@@ -9,7 +9,7 @@ $font: 'Proxima Nova', sans-serif;
 body {
   color: black;
   background: $bg-primary;
-  background: linear-gradient(45deg, rgba(112, 155, 199, 1) 0%, $primary 70%, rgba(19, 10, 84, 1) 100%) no-repeat;
+  background: linear-gradient(45deg, rgba(112, 155, 199, 1) 0%, rgba(10, 30, 100, 1) 56%, rgba(19, 10, 84, 1) 100%) no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -155,11 +155,22 @@ h2 {
   background: $bg-secundary;
   border-radius: 1rem;
 
+  .card-header {
+    margin-bottom: 1rem;
+  }
+
   .field {
-    width: 100%;
+    width: 95%;
     border: none;
     padding: 1.5rem;
+    margin-left: 2.5%;
     font: normal normal 400 2rem/3rem $font;
+    border-radius: 1rem;
+  }
+
+  .comment {
+    font: normal normal 400 1.5rem/3rem $font;
+    margin-left: 1rem;
   }
 
   .button {

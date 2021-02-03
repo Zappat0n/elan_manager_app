@@ -2,7 +2,6 @@
   <h2 class= "card-header text-center">Log in</h2>
   <%= form_for(resource, as: resource_name, url: users_sign_in_path(resource)) do |f| %>
     <div>
-      <%= f.label :name %>
       <%= f.text_field :name, autofocus: true, placeholder: :name, autocomplete: "name", class: "field", id: "sign_in_name" %>
     </div>
 
