@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = current_user.groups.all
+    @groups = current_user.groups.includes(avatar_attachment: :blob)
     @title = 'GROUPS'
   end
 
@@ -16,14 +16,14 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.groups.build(group_params)
     if @group.save
-      redirect_to groups_path, notice: 'Group saved'
+      redirect_to groups_path, notice: 'Group saved.'
     else
-      redirect_to groups_path, alert: 'Error saving group'
+      redirect_to new_group_path, alert: @group.errors.first.full_message
     end
   end
 
   def show
-    @group = Group.includes(:user).find(params[:id])
+    @group = Group.includes(presentations: :author).find(params[:id])
     @title = @group.name.upcase
   end
 end

@@ -10,9 +10,9 @@ class RegistrationsController < ApplicationController
     current_user.avatar.attach(params[:user][:avatar]) unless current_user.avatar == params[:user][:avatar]
 
     if current_user.save
-      redirect_to root_path, notice: 'Avatar updated'
+      redirect_to root_path, notice: 'Avatar updated.'
     else
-      redirect_to users_edit_path
+      redirect_to edit_user_path, alert: current_user.errors.first.full_message
     end
   end
 end
