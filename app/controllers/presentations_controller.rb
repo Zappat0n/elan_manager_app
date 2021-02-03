@@ -22,7 +22,7 @@ class PresentationsController < ApplicationController
     presentation = current_user.presentations.build
     presentation.name = presentation_params[:name]
     presentation.amount = presentation_params[:amount]
-    if presentation_params[:groups]
+    if presentation_params[:groups] && presentation_params[:groups] != ''
       group = Group.find(presentation_params[:groups])
       presentation.groups << group
     end
