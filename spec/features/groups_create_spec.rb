@@ -18,6 +18,6 @@ RSpec.feature 'GroupsCreates', type: :feature do
     visit new_group_path
     click_button 'Create'
     expect(current_path).to eq(new_group_path)
-    expect(page).to have_text('Error saving group.')
+    expect(page).to have_no_text('Group saved.')
   end
 end

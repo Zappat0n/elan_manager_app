@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path, notice: 'Group saved.'
     else
-      redirect_to new_group_path, alert: 'Error saving group.'
+      redirect_to new_group_path, alert: @group.errors.first.full_message
     end
   end
 
