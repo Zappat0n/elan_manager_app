@@ -2,8 +2,6 @@
   <%= link_to 'Create New', new_group_path%>
 </div>
 
-<% if @groups.any? %>
-  <div class="my-container pt-3">
-    <%= render @groups.order(:name) %>
-  </div>
-<% end %>
+<div class="my-container pt-3">
+  <%= render @groups.order(:name) %>
+</div>
